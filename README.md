@@ -1,5 +1,5 @@
 # CerebralCortex Data Process
-Assumptions:
+Assumptions:  
     * Machine IP Address: 192.168.0.10
     * Data folder:  /home/user/data
 
@@ -29,8 +29,8 @@ Assumptions:
 4. Open `cc_configuration.yml` file in **CerebralCortex-DockerCompose/cc_config_file/** folder and place `127.0.0.1` as host for **cassandra, influxdb, mysql, minio**, in line 6, 14, 21 and 33. For **kafkaserver** change the host to your machine's IP address in line 51.
 5. Restart docker-compose services in terminal.
     ```
-    docker-compose stop
-    docker-compose up -d
+    sudo docker-compose stop
+    sudo docker-compose up -d
     ```  
 6. Open IntelIj and clone CerebralCortex-Scripts as a project in IntelIj
     `https://github.com/MD2Korg/CerebralCortex-Scripts.git`
