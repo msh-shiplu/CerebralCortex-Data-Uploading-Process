@@ -2,6 +2,7 @@
 ### Assumptions:  
 * Machine IP Address: 192.168.0.10
 * Data folder:  /home/user/data
+
 Update these two information according to your machine.
 
 ### Procedure
