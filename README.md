@@ -2,9 +2,9 @@
 
   1. Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running by running the command `docker-compose ps`. If the services are down, start them by the command `docker-compose up -d`.
   2. Now, connnect to cassandra using `docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:  
-    ```Bash
-    apt update<br/> 
-    apt install nano  
+    ```
+    apt update
+    apt install nano
     nano /etc/cassandra/cassandra.yaml
     ```  
     Change `batch_size_fail_threshold_in_kb` value from 50 to 5000 and `commitlog_segment_size_in_mb` value from 32 to 512. You can use cnt+w to find a word in nano. Save and close it and exit from cassandra.
