@@ -1,37 +1,37 @@
 # CerebralCortex-Data-Uploading-Process
 
-* Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running by running the command `docker-compose ps`. If the services are down, start them by the command `docker-compose up -d`.
+1. Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running by running the command `docker-compose ps`. If the services are down, start them by the command `docker-compose up -d`.
 * Now, connnect to cassandra using `docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:  
-```
+    ```
     apt update
     apt install nano
     nano /etc/cassandra/cassandra.yaml
-```   
+    ```
    Change `batch_size_fail_threshold_in_kb` value from 50 to 5000 and `commitlog_segment_size_in_mb` value from 32 to 512. 
    You can use cnt+w to find a word in nano. Save and close it and exit from cassandra.
-* Similarly, connect to mysql service using `docker-compose exec mysql bash`. After connecting to mysql, run the following commands:  
-```
+2. Similarly, connect to mysql service using `docker-compose exec mysql bash`. After connecting to mysql, run the following commands:  
+    ```
     apt update
     apt install nano  
     nano /etc/mysql/my.cnf  
-```  
+    ```  
     Add the following two lines and save it.  
-```
+    ```
     [mysqld]  
     max_connections = 2000  
-```    
+    ```    
    Exit from mysql service.
-* Open `docker-compose.yml` file in **CerebralCortex-DockerCompose** folder and place your machine's IP in line 109 as follows:
+3. Open `docker-compose.yml` file in **CerebralCortex-DockerCompose** folder and place your machine's IP in line 109 as follows:
     `KAFKA_ADVERTISED_HOST_NAME: ${MACHINE_IP:-192.168.0.10}`
-* Open `cc_configuration.yml` file in **CerebralCortex-DockerCompose/cc_config_file/** folder and place `127.0.0.1` as host for **cassandra, influxdb, mysql, minio**, in line 6, 14, 21 and 33. For **kafkaserver** change the host to your machine' IP address in line 51.
-* Restart docker-compose services in terminal.
-```
+4. Open `cc_configuration.yml` file in **CerebralCortex-DockerCompose/cc_config_file/** folder and place `127.0.0.1` as host for **cassandra, influxdb, mysql, minio**, in line 6, 14, 21 and 33. For **kafkaserver** change the host to your machine' IP address in line 51.
+5. Restart docker-compose services in terminal.
+    ```
     docker-compose stop
     docker-compose up -d
-```  
-* Open IntelIj and clone CerebralCortex-Scripts as a project in IntelIj
+    ```  
+6. Open IntelIj and clone CerebralCortex-Scripts as a project in IntelIj
     `https://github.com/MD2Korg/CerebralCortex-Scripts.git`
-* In `replay_participant.sh` under data_replay folder, change the following:
+7. In `replay_participant.sh` under data_replay folder, change the following:
     * In line 3:  
       `for p in /home/user/data/[a-z0-9]*-[a-z0-9]*`  
       here `/home/user/data/` is the **data folder**, change it according to your data folder.
@@ -40,24 +40,24 @@
     * In line 12:  
      `python3.6 replay_data.py -b 192.168.0.10:9092 -d "$f/"`  
       here `192.168.0.10` is the machine's IP address, change it according to your machine.
-* In `run.sh` under data_replay folder, change line 3 to the following:  
+8. In `run.sh` under data_replay folder, change line 3 to the following:  
   `python3 replay_data.py -b "192.168.0.10:9092" -d "/home/user/data/"`
-* Run the replay_participant.sh file in terminal (you can use the terminal inside IntelIj).
-```
+9. Run the replay_participant.sh file in terminal (you can use the terminal inside IntelIj).
+    ```
     bash replay_participant.sh
-```  
+    ```  
    It will take a long to finish, approximately one day (depending on your machine).
-* Open IntelIj and clone CerebralCortex-KafkaStreamPreprocessor as a project in IntelIj  
+10. Open IntelIj and clone CerebralCortex-KafkaStreamPreprocessor as a project in IntelIj  
   `https://github.com/MD2Korg/CerebralCortex-KafkaStreamPreprocessor.git`
-* In `run.sh` under util folder, change the followings:
+11. In `run.sh` under util folder, change the followings:
   * Comment out line 7
   * In line 10, define the correct path for `SPARK_HOME`  
     `export SPARK_HOME=/home/user/spark/spark-2.2.0-bin-hadoop2.7/`  
     Change it according to your spark path. If you don't have spark, download Apache Spark 2.2.0 and extract it and place the path here.
   * In line 27, place your machine's IP address  
     `KAFKA_BROKER="192.168.0.10:9092"`
-*  Run the run.sh file in terminal (you can use the terminal inside IntelIj).
-```Bash
+12. Run the run.sh file in terminal (you can use the terminal inside IntelIj).
+    ```
     sh run.sh
-```  
+    ```  
 Voila
