@@ -1,5 +1,5 @@
-# CerebralCortex Data Process
-### Assumptions:  
+# CerebralCortex Data Processing
+### Assumptions  
 * Machine IP Address: 192.168.0.10
 * Data folder:  /home/user/data
 
