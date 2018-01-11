@@ -66,4 +66,4 @@ Update these two information according to your machine.
     ```
     sh run.sh
     ```  
-Voila
+voilà
