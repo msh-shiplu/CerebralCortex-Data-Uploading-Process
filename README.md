@@ -21,7 +21,7 @@
     max_connections = 2000  
     ```    
    Exit from mysql service.
-3. Open `docker-compose.yml` file in **CerebralCortex-DockerCompose** folder and place your machine's IP in line 109 as follows:
+3. Open `docker-compose.yml` file in **CerebralCortex-DockerCompose** folder and place your machine's IP in line 109 as follows:  
     `KAFKA_ADVERTISED_HOST_NAME: ${MACHINE_IP:-192.168.0.10}`
 4. Open `cc_configuration.yml` file in **CerebralCortex-DockerCompose/cc_config_file/** folder and place `127.0.0.1` as host for **cassandra, influxdb, mysql, minio**, in line 6, 14, 21 and 33. For **kafkaserver** change the host to your machine' IP address in line 51.
 5. Restart docker-compose services in terminal.
