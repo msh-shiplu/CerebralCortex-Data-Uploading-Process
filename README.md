@@ -1,7 +1,7 @@
 # CerebralCortex-Data-Uploading-Process
 
 1. Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running by running the command `docker-compose ps`. If the services are down, start them by the command `docker-compose up -d`.
-* Now, connnect to cassandra using `docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:  
+2. Now, connnect to cassandra using `docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:  
     ```
     apt update
     apt install nano
