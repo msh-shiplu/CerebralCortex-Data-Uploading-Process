@@ -4,6 +4,7 @@
   2. Now, connnect to cassandra using `docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:  
     ```
     apt update
+    
     apt install nano
     nano /etc/cassandra/cassandra.yaml
     ```  
