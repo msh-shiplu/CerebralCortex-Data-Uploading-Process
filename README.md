@@ -1,4 +1,7 @@
 # CerebralCortex Data Process
+Assumptions:
+    * Machine IP Address: 192.168.0.10
+    * Data folder:  /home/user/data
 
 1. Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running with the command `sudo docker-compose ps`. If the services are down, start them by the command `sudo docker-compose up -d`.
 2. Now, connnect to cassandra using `sudo docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:  
@@ -23,7 +26,7 @@
    Exit from mysql service.
 3. Open `docker-compose.yml` file in **CerebralCortex-DockerCompose** folder and place your machine's IP in line 109 as follows:  
     `KAFKA_ADVERTISED_HOST_NAME: ${MACHINE_IP:-192.168.0.10}`
-4. Open `cc_configuration.yml` file in **CerebralCortex-DockerCompose/cc_config_file/** folder and place `127.0.0.1` as host for **cassandra, influxdb, mysql, minio**, in line 6, 14, 21 and 33. For **kafkaserver** change the host to your machine' IP address in line 51.
+4. Open `cc_configuration.yml` file in **CerebralCortex-DockerCompose/cc_config_file/** folder and place `127.0.0.1` as host for **cassandra, influxdb, mysql, minio**, in line 6, 14, 21 and 33. For **kafkaserver** change the host to your machine's IP address in line 51.
 5. Restart docker-compose services in terminal.
     ```
     docker-compose stop
