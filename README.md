@@ -9,7 +9,7 @@
     ```
    Change `batch_size_fail_threshold_in_kb` value from 50 to 5000 and `commitlog_segment_size_in_mb` value from 32 to 512. 
    You can use cnt+w to find a word in nano. Save and close it and exit from cassandra.
-2. Similarly, connect to mysql service using `docker-compose exec mysql bash`. After connecting to mysql, run the following commands:  
+2. Similarly, connect to mysql service using `sudo docker-compose exec mysql bash`. After connecting to mysql, run the following commands:  
     ```
     apt update
     apt install nano  
