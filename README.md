@@ -33,7 +33,7 @@
     sudo docker-compose stop
     sudo docker-compose up -d
     ```  
-6. Open IntelIj and clone CerebralCortex-Scripts as a project in IntelIj
+6. Open IntelIj and clone CerebralCortex-Scripts as a project in IntelIj  
     `https://github.com/MD2Korg/CerebralCortex-Scripts.git`
 7. In `replay_participant.sh` under data_replay folder, change the following:
     * In line 3:  
