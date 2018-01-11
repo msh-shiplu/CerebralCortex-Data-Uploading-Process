@@ -2,6 +2,7 @@
 ### Assumptions:  
 * Machine IP Address: 192.168.0.10
 * Data folder:  /home/user/data
+Update these two information according to your machine.
 
 ### Procedure
 1. Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running with the command `sudo docker-compose ps`. If the services are down, start them by the command `sudo docker-compose up -d`.
