@@ -2,22 +2,25 @@
 
   1. Open terminal and go to your **CerebralCortex-DockerCompose** folder. Check whether every cerebralcortex service is running by running the command `docker-compose ps`. If the services are down, start them by the command `docker-compose up -d`.
   2. Now, connnect to cassandra using `docker-compose exec cassandra bash`. After connecting to cassandra, run the following commands:
+  
     ```Bash
-    apt update
-    apt install nano
+    apt update  
+    apt install nano  
     nano /etc/cassandra/cassandra.yaml
     ```
+    
     Change `batch_size_fail_threshold_in_kb` value from 50 to 5000 and `commitlog_segment_size_in_mb` value from 32 to 512. You can use cnt+w to find a word in nano. Save and close it and exit from cassandra.
   3. Similarly, connect to mysql service using `docker-compose exec mysql bash`. After connecting to mysql, run the following commands:
+   
     ```Bash
-    apt update
-    apt install nano
-    nano /etc/mysql/my.cnf
+    apt update  
+    apt install nano  
+    nano /etc/mysql/my.cnf  
     ```
-    Add the following two lines and save it.
+    Add the following two lines and save it.  
     ```
-    [mysqld]
-    max_connections = 2000
+    [mysqld]  
+    max_connections = 2000  
     ```
     Exit from mysql service.
   1. Open `docker-compose.yml` file in **CerebralCortex-DockerCompose** folder and place your machine's IP in line 109 as follows:
