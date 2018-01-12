@@ -55,7 +55,7 @@ Update these two information according to your machine.
    It will take a long to finish, approximately one day (depending on your machine).
 10. Open IntelIj and clone CerebralCortex-KafkaStreamPreprocessor as a project in IntelIj  
   `https://github.com/MD2Korg/CerebralCortex-KafkaStreamPreprocessor.git`
-11. In `run.sh` under util folder, change the followings:
+11. In `run.sh` change the followings:
   * Comment out line 7
   * In line 10, define the correct path for `SPARK_HOME`  
     `export SPARK_HOME=/home/user/spark/spark-2.2.0-bin-hadoop2.7/`  
