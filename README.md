@@ -38,11 +38,11 @@ Update these two information according to your machine.
 10. Open IntelIj and clone CerebralCortex-KafkaStreamPreprocessor as a project in IntelIj  
   `https://github.com/MD2Korg/CerebralCortex-KafkaStreamPreprocessor.git`
 11. In `run.sh` change the followings:
-  * Comment out line 7
-  * In line 10, define the correct path for `SPARK_HOME`  
+    * Comment out line 7
+    * In line 10, define the correct path for `SPARK_HOME`  
     `export SPARK_HOME=/home/user/spark/spark-2.2.0-bin-hadoop2.7/`  
     Change it according to your spark path. If you don't have spark, download Apache Spark 2.2.0 and extract it and place the path here.
-  * In line 27, place your machine's IP address  
+    * In line 27, place your machine's IP address  
     `KAFKA_BROKER="192.168.0.10:9092"`
 
 6. Open IntelIj and clone CerebralCortex-Scripts as a project in IntelIj  
